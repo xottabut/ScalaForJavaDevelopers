@@ -9,9 +9,19 @@ case class Car(model: String, year: Int)
 
 val car = Car("Tesla", 2020)
 // todo: copy
+car.copy(year = 2021)
 // todo: equals vs eq
+car == car.copy()
+car eq car.copy()
 // todo: apply
 // todo: simple pattern matching
+
+//val model = car.model
+//val year = car.year
+
+val Car(model, year) = car
+
+println(s"Model is $model")
 
 // ADT: T1 | T2
 sealed trait Person {

@@ -6,11 +6,20 @@
 
   println(name)
 
+  def this(name: String) {
+    this(name, 5)
+  }
+
   def introduction: String = s"My name is $name. I'm $age."
 
 }
 
+object Person {
+  def apply(name: String, age: Int): Person = new Person(name, age)
+}
+
 val p = new Person("Ivan", 30)
+val p2 = Person("Ivan", 30)
 
 p.name
 p.introduction
@@ -25,9 +34,7 @@ object Earth {
 }
 
 // companion object
-object Person {
-  def apply(): Person = ???
-}
+
 
 // static in Singleton
 object Intellias {

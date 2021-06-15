@@ -12,6 +12,7 @@ flexibleP = 5
 
 // Type annotation can be added
 val stringName = "Ivan"
+// java style: String name = "Ivan"
 val name: String = "Ivan"
 
 
@@ -24,7 +25,10 @@ Long      // RichLong
 Float     // RichFloat
 Double    // RichDouble
 
+val num: Int = 65
+num.max(500)
+num max 500
+
 // Operators
 1 + 5
-
-
+1.+(5)

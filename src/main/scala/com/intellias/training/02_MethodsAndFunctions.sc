@@ -3,7 +3,9 @@
 // }
 
 def isEven(num: Int) = num % 2 == 0
-val isEvenFunction = (num: Int) => num % 2 == 0
+val isEvenFunction: Int => Boolean = (num: Int) => num % 2 == 0
+//val isEvenFunction: Int => Boolean = _ % 2 == 0
+//val isEvenFunction: (Int, Int) => Boolean = _ % _ == 0
 // show another form
 
 isEven(4)
@@ -24,12 +26,12 @@ val h = calculateHypotenuse(3, 4)
 def div(a: Int = 0, b: Int = 1) = a / b
 
 div(5, 2)
-//div(a = 5, b = 2)
-//div(b = 2, a = 5)
+div(a = 5, b = 2)
+div(b = 2, a = 5)
 //
-//div()
-//div(5)
-//div(b = 5)
+div()
+div(5)
+div(b = 5)
 
 // Unit
 def printHi() {

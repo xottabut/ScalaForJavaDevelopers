@@ -35,7 +35,7 @@ trait C extends A {
 
 // mix
 class D extends B with C {
-  override def calculate(string: String): Int = super[B].calculate(string)
+  override def calculate(string: String): Int = super[C].calculate(string)
 }
 
 val d = new D

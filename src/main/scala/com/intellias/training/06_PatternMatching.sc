@@ -1,6 +1,7 @@
 // Pattern matching on Strings
 "one" match {
-  case "one" => println("one")
+  case x: String => println(x + x)
+  case "one1" => println("one")
   case "two" => println("two")
   case "three" => println("three")
   case _ =>
@@ -19,12 +20,24 @@ case class Aspirant(name: String, subject: String) extends Person
 
 val unknownPerson: Person = Teacher("Ivan", "Math")
 //todo simple pattern matching
+val res = unknownPerson match {
+  case x: Student => ""
+  case teacher@Teacher(_, s@"subject") => s
+  case teacher@Teacher(_, s) if s == "subject" => s
+  case Aspirant(name, subject) => throw new RuntimeException
+  case _ =>
+}
 
 // Option and Pattern matching on Option classes
 // Option
 //   Some
 //   None
-val maybeString = Option("I'm here")
+val maybeString: Option[String] = Option("I'm here")
+
+maybeString match {
+  case None => println("I'm empty")
+  case _ => println("")
+}
 
 //  Pattern matching on Lists
 // todo: implement your own list before!
